@@ -152,14 +152,13 @@ class MyCPT{
 
     public function my_query($query) {
 
-        if (!is_admin() && $query->is_main_query() && isset($query->query['name'])) {
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    }
 
-            $query->set('post_type', [
-                'post',
-                'page',
-                'projekty'
-            ]);
-        }
+    if ($query->is_singular('projekty')) {
+        $query->set('post_type', ['projekty']);
+    }
     }
 
     public function register_meta() {
