@@ -5,8 +5,200 @@
  * Replace them with your own styles or remove the file completely.
  */
 
+.ims-filters__row
+{
+    display: flex;
+}
+
+select.sektor-filter,
+select.podsektor-filter,
+select.klient-filter,
+select.zakres-filter,
+select.rok-filter,
+select.sektor-filter:focus,
+select.podsektor-filter:focus,
+select.klient-filter:focus,
+select.zakres-filter:focus,
+select.rok-filter:focus
+{
+    border: 2px solid rgba(23, 37, 85, 1)!important;
+	margin-right: 20px;
+	color: #fff;
+	background-color: rgba(23, 37, 85, 1)!important;
+	font-weight:bold;
+}
+
+select.sektor-filter option,
+select.podsektor-filter option,
+select.klient-filter option,
+select.zakres-filter option,
+select.rok-filter option
+{
+	color: #2d2d2d;
+}
+
 .wp-block-create-block-filters {
 	background-color: #21759b;
 	color: #fff;
 	padding: 2px;
+}
+option{
+  	border-radius: 8px 8px 0 0;
+}
+
+::picker(select) {
+  	border-radius: 8px;
+}
+option:not(option:last-of-type) {
+  	border-bottom: none;
+}
+option:nth-of-type(odd) {
+  	background: white;
+}
+option:nth-of-type(even) {
+  	background: rgba(255,255,255,0.6);
+}
+
+option:hover,
+option:focus {
+  background: #00A4EF;
+}
+option:checked {
+  font-weight: bold;
+
+}
+::picker(select) {
+  opacity: 0;
+  transition: all 0.4s allow-discrete;
+}
+:open::picker(select) {
+  opacity: 1;
+}
+@starting-style {
+  :open::picker(select) {
+    opacity: 0;
+  }
+}
+::picker(select) {
+  top: calc(anchor(bottom) + 1px);
+  left: anchor(10%);
+}
+
+.project-item
+{
+    border: 1px solid darkblue;
+    border-radius: 25px;
+    padding: 20px;
+    margin-bottom: 15px;
+	box-shadow: 3px 1px 1px #00008b;
+}
+.configurator-notice {
+	display: flex;
+	justify-content: center;
+	color: #00A4EF;
+	font-size: 18px;
+	font-weight:bold;
+	margin: 100px 0 150px 0;
+}
+.project-excerpt {
+	display:none;
+}
+.project-item.expanded .project-excerpt {
+	display:block;
+}
+ul.project-excerpt li {
+	color: #2d2d2d;
+}
+.project-full-content {
+  display: none;
+}
+.project-item.expanded .project-full-content {
+  display: block;
+}
+.project-item.expanded .project-title {
+  display: none;
+}
+.post-top {
+    display: flex;
+	display: flex;
+    color: #00A4EF;
+    font-weight: bold;
+	margin-bottom: 10px;
+}
+.content-frame {
+	display:flex;
+}
+.project-image {
+    flex-basis: 15%;
+}
+.project-info {
+    display: flex;
+    flex-basis: 85%;
+    justify-content: center;
+    flex-direction: column;
+	margin-left:10px;
+}
+.project-image {
+    flex-basis: 15%;
+    display: flex;
+    justify-content: center;
+}
+.post-bottom {
+    justify-content: center;
+    display: flex;
+}
+
+@media(min-width:1024px) {
+	.post-top {
+    	padding: 5px;
+	}
+	.project-sector,
+	.project-category,
+	.project-client,
+	.project-year {
+		margin-right:10px;
+	}
+	.project-category,
+	.project-client,
+	.project-year {
+		margin-left:10px;
+	}
+	img.project-thumb {
+    	width: 150px!important;
+    	height: 150px!important;
+	}
+}
+
+@media(max-width:1023px) {
+	.ims-filters__row {
+    	overflow-x: scroll;
+	}
+	.post-top {
+		padding: 0px;
+		flex-wrap: wrap;
+	}
+	.project-sector,
+	.project-category,
+	.project-client,
+	.project-year {
+		margin-right:0px;
+	}
+	.project-category,
+	.project-client,
+	.project-year {
+		margin-left:0px;
+	}
+}
+
+@media(min-width:768px) and (max-width:1023px) {
+	img.project-thumb {
+    	height: 78px !important;
+    	width: 78px !important;
+	}
+}
+@media(max-width:767px) {
+	img.project-thumb {
+    	height: 37px !important;
+    	width: 37px !important;
+	}
 }

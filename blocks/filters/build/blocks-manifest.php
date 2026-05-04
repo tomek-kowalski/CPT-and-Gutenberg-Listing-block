@@ -4,15 +4,12 @@ return array(
 	'filters' => array(
 		'$schema' => 'https://schemas.wp.org/trunk/block.json',
 		'apiVersion' => 3,
-		'name' => 'create-block/filters',
-		'version' => '0.1.0',
+		'name' => 'ims/filters',
+		'version' => '1.0',
 		'title' => 'Filters',
 		'category' => 'widgets',
 		'icon' => 'smiley',
-		'description' => 'Example block scaffolded with Create Block tool.',
-		'example' => array(
-			
-		),
+		'description' => 'IMG projects listing.',
 		'supports' => array(
 			'html' => false
 		),
@@ -20,6 +17,7 @@ return array(
 		'editorScript' => 'file:./index.js',
 		'editorStyle' => 'file:./index.css',
 		'style' => 'file:./style-index.css',
-		'viewScript' => 'file:./view.js'
+		'viewScript' => 'file:./view.js',
+		'render' => 'file:./render.php'
 	)
 );

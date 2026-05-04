@@ -1,24 +1,27 @@
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
 import { useBlockProps } from '@wordpress/block-editor';
 
-/**
- * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then serialized by the block
- * editor into `post_content`.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
- *
- * @return {Element} Element to render.
- */
 export default function save() {
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'Filters – hello from the saved content!' }
-		</p>
+		<div {...useBlockProps.save()} className="wp-block-ims-filters">
+
+			<div className="ims-filters">
+
+				<div className="ims-filters__row">
+
+					<select data-filter="category"></select>
+					<select data-filter="subcategory"></select>
+					<select data-filter="client"></select>
+					<select data-filter="support"></select>
+					<select data-filter="year"></select>
+
+				</div>
+
+				<div data-results className="ims-results"></div>
+
+				<div data-pagination className="ims-pagination"></div>
+
+			</div>
+
+		</div>
 	);
 }

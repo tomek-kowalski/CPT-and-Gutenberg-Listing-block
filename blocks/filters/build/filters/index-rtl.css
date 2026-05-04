@@ -1,1 +1,1 @@
-.wp-block-create-block-filters{border:1px dotted red}
+.ims-filters__row{display:grid;gap:10px;grid-template-columns:repeat(5,1fr);margin-bottom:20px}.ims-results{background:#f5f5f5;border:1px dashed #ccc;padding:20px}.ims-pagination{display:flex;gap:5px;margin-top:15px}
