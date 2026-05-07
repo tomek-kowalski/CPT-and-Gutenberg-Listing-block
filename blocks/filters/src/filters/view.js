@@ -272,8 +272,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="project-info">
                     
-                    <h3 class="project-title">${post.title.rendered}</h3>
-                    <h3 class="project-title project-full-content">${post.content.rendered}</h3>
+                    <h2 class="project-title">${post.title.rendered}</h2>
+                    <h2 class="project-title project-full-content">${post.content.rendered}</h2>
                     <ul class="project-excerpt">
                         <li>${post.meta?.support_range}</li>
                         <li>${post.excerpt.rendered}</li>
